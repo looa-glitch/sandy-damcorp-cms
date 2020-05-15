@@ -1,0 +1,367 @@
+[
+  {
+    "command": "damcorp",
+    "botId": 1,
+    "description": "damcorp",
+    "triggers": [
+      {
+        "pattern": ".",
+        "type": "regexp",
+        "id": 246
+      }
+    ],
+    "variables": [
+      {
+        "name": "_answ_menu_cs",
+        "type": "string",
+        "id": 211
+      },
+      {
+        "name": "_answ_invalid_photo",
+        "type": "string",
+        "id": 318
+      },
+      {
+        "name": "_answ_invalid_location",
+        "type": "string",
+        "id": 277
+      },
+      {
+        "name": "_answ_photo",
+        "type": "string",
+        "id": 333
+      },
+      {
+        "name": "_answ_location",
+        "type": "string",
+        "id": 139
+      },
+      {
+        "name": "_answ_email_tidak_valid",
+        "type": "string",
+        "id": 316
+      },
+      {
+        "name": "_answ_daftar_email",
+        "type": "string",
+        "id": 261
+      },
+      {
+        "name": "_answ_daftar_perusahaan",
+        "type": "string",
+        "id": 127
+      },
+      {
+        "name": "_answ_consent_tidak_setuju",
+        "type": "string",
+        "id": 184
+      },
+      {
+        "name": "_answ_menu_utama",
+        "type": "string",
+        "id": 248
+      },
+      {
+        "name": "_answ_default",
+        "type": "string",
+        "id": 263
+      },
+      {
+        "name": "question_1",
+        "type": "string"
+      },
+      {
+        "name": "question_2",
+        "type": "string"
+      },
+      {
+        "name": "question_3",
+        "type": "string"
+      }
+    ],
+    "script": [
+      {
+        "topic": "default",
+        "script": [
+          {
+            "text": [
+              "Selamat datang di Damcorp. Demi kenyamanan dan privasi Anda, interaksi di WhatsApp Damcorp ini akan kami jadikan referensi informasi data pelanggan kami.\n\nPilih Lanjut jika anda menyetujuinya.\n\n1. Lanjut"
+            ],
+            "collect": {
+              "key": "_answ_default",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "on_timeout",
+        "script": [
+          {
+            "text": [
+              "Looks like you got distracted. We can continue later."
+            ]
+          },
+          {
+            "action": "timeout"
+          }
+        ]
+      },
+      {
+        "topic": "menu_utama",
+        "script": [
+          {
+            "text": [
+              "Selamat datang Bapak/Ibu di WhatsApp Business Damcorp, untuk memulai percakapan ini, silahkan ketik Nama Anda."
+            ],
+            "collect": {
+              "key": "_answ_menu_utama",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "consent_tidak_setuju",
+        "script": [
+          {
+            "text": [
+              "Bapak/Ibu wajib menjawab \"Lanjut\" sebelum dapat melanjutkan pembicaraan."
+            ],
+            "collect": {
+              "key": "_answ_consent_tidak_setuju",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "daftar_perusahaan",
+        "script": [
+          {
+            "text": [
+              "Masukkan nama perusahaan anda."
+            ],
+            "collect": {
+              "key": "_answ_daftar_perusahaan",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "daftar_email",
+        "script": [
+          {
+            "text": [
+              "Masukkan alamat email anda."
+            ],
+            "collect": {
+              "key": "_answ_daftar_email",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "email_tidak_valid",
+        "script": [
+          {
+            "text": [
+              "Alamat email anda tidak valid, silahkan masukkan email yang valid."
+            ],
+            "collect": {
+              "key": "_answ_email_tidak_valid",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "location",
+        "script": [
+          {
+            "text": [
+              "Kirim lokasi anda."
+            ],
+            "collect": {
+              "key": "_answ_location",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "photo",
+        "script": [
+          {
+            "text": [
+              "Kirim foto selfie anda."
+            ],
+            "collect": {
+              "key": "_answ_photo",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "location_invalid",
+        "script": [
+          {
+            "text": [
+              "Lokasi anda tidak valid, silahkan masukkan lokasi yang valid."
+            ],
+            "collect": {
+              "key": "_answ_invalid_location",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "photo_invalid",
+        "script": [
+          {
+            "text": [
+              "Foto anda tidak valid, silahkan masukkan foto yang valid."
+            ],
+            "collect": {
+              "key": "_answ_invalid_photo",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "menu_cs",
+        "script": [
+          {
+            "text": [
+              "Silahkan pilih kebutuhan Anda:\n\n1. WhatsApp Business API\n2. Pawoon POS\n3. Digital Kiosk\n4. Digital Loker\n5. Flo Payment System\n6. Self Order System - Digiresto\n7. GOWES Bike Sharing\n8. Smart EDC\n9. Cloud Advertising Platform - Digital Signage and Trade Marketing \n10.Digital HR\n11. E-commerce Hub (Digital Product Aggregator)\n12. Mkopi\n13. Cloud Kitchen Virtual Foodcourt\n14. Digital Travel and Travel Agent Network\n15. Media and Entertainment\n16. SMS, Voice, LBA, and IOT Service Provider\nIntegrated Brand Communication."
+            ],
+            "collect": {
+              "key": "_answ_menu_cs",
+              "options": [
+                {
+                  "default": true,
+                  "pattern": "default",
+                  "action": "next"
+                }
+              ]
+            }
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      },
+      {
+        "topic": "end_menu_cs",
+        "script": [
+          {
+            "text": [
+              "Terimakasih atas data yang diberikan, untuk kembali ke menu awal silahkan ketik 0."
+            ]
+          },
+          {
+            "action": "complete"
+          }
+        ]
+      }
+    ],
+    "id": "damcorp",
+    "modified": "2020-05-15T01:09:28.932Z",
+    "name": "damcorp"
+  }
+]
